@@ -5,7 +5,7 @@ I began to find a Javascript AOT compiler more than a month ago, I wonder whethe
 
 I decided to wirte a Javascript AOT compiler at the end of August 2014, and a month later I write a rudiment about it--It support part syntax and can compile signal *.js file to *.obj file on windows, and then, the object file can be linked to *.exe by link.exe in Visual Studio. It work well but slowly.
 
-After discussed with my wife when we had dinner yesterday, I decide to release the whole project under Mozilla license, to greet for [Brendan Eich](http://en.wikipedia.org/wiki/Brendan_Eich), the creator of Javascript, the co-founder of Mozilla.
+After discussed with my wife when we had dinner yesterday, I decide to release the whole project under Mozilla license, to salute [Brendan Eich](http://en.wikipedia.org/wiki/Brendan_Eich), the creator of Javascript, the co-founder of Mozilla.
 
 Before upload the whole project, I need to send a mail, because I use some code with modified from anther prject, and I need clean up the code too.
 
