@@ -15,11 +15,11 @@ Before upload the whole project, I need to send a mail, because I use some code 
 jslang is a Javascript AOT compiler base on LLVM(yes, it's named acording to clang).
 There are about three parts in this project:
   * generate codes
-    * use lex and bison to generate lex and syntax code
+    * use flex and bison to generate lexical and syntax code
     * use clang to generate IR code
-  * compile file to object file
+  * compile to object files
     * load IR code before compile, parse *.js to AST with the lexer and parser which is generated in part i, and then transcode AST to IR code, now both the generated code and the parsed Javascript file are in IR code mode, transcode IR code to object file like llc(the LLVM Native Code Generator)
-  * link object file
+  * link object files
     * because the compiler has to use some platform dependent functions, or some third-party libraries, wrap them in buildin types(for example, there are many struct types in pthread, it's a boring job to declare them in IR code, even generate with clang, so you can wrap the functions with buildin types: int double, array, pointer, or simple struct types), and compile them to object files with your host compiler, then link the object file(s) together to a binary file.
      
 ## Roadmap
@@ -30,3 +30,5 @@ There are about three parts in this project:
 * split generated IR code to two parts, one for load(almost all types), one for link(almost all functions), to speed up the compiling.
 
 * remove garbage collector: all memory allocations are binding to object(record and analysis all objects which are alloced in each region, destory them when leave the region, the objects returned to upper region should be marked to the real region, use refrence count if needed)
+
+* write a new lexer and syntax parser to replace flex and bison generated codes, I modify ecmascript.y base on  WebKit/JavaScriptCore/parser/Grammy.y(yes, they drop it later), and write ecmascript.l acording it, They are easy to use, and Grammy.y is very sobusty, but they don't have good performance actually, this maybe the reason why WebKit droped it.
