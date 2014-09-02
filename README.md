@@ -1,4 +1,4 @@
-##Propose
+##Purpose
 ======
 
 I began to find a Javascript AOT compiler more than a month ago, I wonder whether there is a Javascript AOT compiler base on V8, since it is really a good Javascript JIT compiler, and then I know about [JXCORE](http://jxcore.com). 
