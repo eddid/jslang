@@ -35,8 +35,16 @@ There are about three parts in this project:
 
 * replace property hashmap to hidden class, I tried but failed, I write a type tree to record all types and all relationship of them, I have no idea to record the real type of each value in compiler "world", they are objects, but I can't find it is a NumberObject or a BooleanObject.
 
-* split generated IR code to two parts, one for load(almost all types), one for link(almost all functions), to speed up the compiling.
+* ~~split generated IR code to two parts, one for load(almost all types), one for link(almost all functions), to speed up the compiling.~~
 
 * remove garbage collector: all memory allocations are bound to object(record and analysis all objects which are alloced in each region, destory them when leave the region, the objects returned to upper region should be marked to the real region, use refrence count if needed)
 
 * write a new lexer and syntax parser to replace flex and bison generated codes, I modify ecmascript.y base on  WebKit/JavaScriptCore/parser/Grammy.y(yes, they drop it later), and write ecmascript.l acording it, They are easy to use, and Grammy.y is very robusty, but they don't have good performance actually, maybe this is the reason for WebKit droped it.
+
+* implement exception, it should work well on both *NUX and Windows platform.
+
+* record varibles of linear predeceesor for closure, since it's an AOT compiler, I purpose just set the varibles whitch are used in closure only.
+
+* find and record a suitable Instruction when create a function, to insert variable Alloca Instruction before it if we need create some variables, for example, `arguments`
+
+* optimize code for runtime, shorten the time of `fibnacci`(40) to one second.
