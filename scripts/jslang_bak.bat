@@ -1,0 +1,2 @@
+"C:\Program Files\7-Zip\7z.exe" a -xr!.svn -xr!Debug -xr!Release -xr!Debug_Cairo -xr!ipch -xr!*.obj -xr!*.ncb -xr!*.suo -xr!*.pdb -xr!*.idb -xr!*.exp -xr!*.ilk -xr!*.user -xr!*.sdf -xr!*.bz2 -xr!*.tlog -xr!*.opensdf -xr!*.moc -xr!*.pro -xr!*.SearchResults -xr!*.so ..\jslang.7z ..\CMakeLists.txt ..\ejs_runtime ..\include ..\lib ..\license ..\scripts ..\test ..\third_party ..\tools > ..\log.txt
+PAUSE
