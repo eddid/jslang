@@ -36,22 +36,18 @@ STRING(REGEX REPLACE "-L([^ ]*)(.*)" "\1" LLVM_LIB_PATH ${LLVM_LFLAGS})
 ###########################################
 # common settings and options
 ###########################################
-set(LUA_VERSION_MAJOR 5)
-set(LUA_VERSION_MINOR 1)
-set(LUA_VERSION_PATCH 4)
-set(LUA_VERSION
-				"${LUA_VERSION_MAJOR}.${LUA_VERSION_MINOR}.${LUA_VERSION_PATCH}")
-set(LUA_SOVERSION
-				"${LUA_VERSION_MAJOR}.${LUA_VERSION_MINOR}")
+set(JSLANG_VERSION_MAJOR 0)
+set(JSLANG_VERSION_MINOR 1)
+set(JSLANG_VERSION_PATCH 0)
+set(JSLANG_VERSION
+				"${JSLANG_VERSION_MAJOR}.${JSLANG_VERSION_MINOR}.${JSLANG_VERSION_PATCH}")
+set(JSLANG_SOVERSION
+				"${JSLANG_VERSION_MAJOR}.${JSLANG_VERSION_MINOR}")
 
 set(COMMON_CFLAGS)
 set(COMMON_LDFLAGS)
 set(LIBS)
 
-#
-# llvm-lua options.
-#
-option(LUA_CPP_SUPPORT "Enable c++ support" OFF)
 set(LLVM_CC "clang" CACHE STRING "Command to compile C-code to LLVM bitcode (clang or llvm-gcc)")
 set(LLVM_LD "llvm-ld" CACHE STRING "Command to link LLVM bitcode files into one bitcode file.")
 
