@@ -43,8 +43,12 @@ There are about three parts in this project:
 
 * implement exception, it should work well on both *NUX and Windows platform.
 
-* record varibles of linear predeceesor for closure, since it's an AOT compiler, I purpose just set the varibles whitch are used in closure only.
+* implement closure, record varibles of linear predeceesor for closure, since it's an AOT compiler, I purpose just set the varibles whitch are used in closure only.
 
-* find and record a suitable Instruction when create a function, to insert variable Alloca Instruction before it if we need create some variables, for example, `arguments`
+* find and record a suitable Instruction when create a function, to insert variable Alloca Instructions before it if we need create some variables, for example, `arguments`
 
 * optimize code for runtime, shorten the time of `fibnacci`(40) to one second.
+
+* implement and improve the platform dependent code, porting the project to linux and some platforms else
+
+* implement cross complie feature for jslang(though jslang just is a front-end of LLVM, but it still has some work to do)
